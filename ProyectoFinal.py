@@ -1,6 +1,6 @@
 #Fase 3: Prototipo funcional
 #Proyecto: Sboard
-#Autores: Alejandro Gómez 20347, Marco Jurado 20308, Oscar López 20679, Ana Paola de León 20361
+#Autores: Alejandro Gómez 20347, Marco Jurado 20308, Racso1624, Ana Paola de León 20361
 #Fecha 21/04/2020
 
 Diccionario_Semana = {'Lunes':[], 'Martes':[], 'Miércoles':[], 'Jueves':[], 'Viernes':[], 'Sábado':[], 'Domingo':[]}
