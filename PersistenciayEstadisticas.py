@@ -1,7 +1,7 @@
 #Fase 4: Entrega final 
 #Módulo: Funciones de persistencia de datos y estadísticas
 #Proyecto: Sboard
-#Autores: Alejandro Gómez 20347, Marco Jurado 20308, Oscar López 20679, Ana Paola de León 20361
+#Autores: Alejandro Gómez 20347, Marco Jurado 20308, Racso1624, Ana Paola de León 20361
 #Fecha 21/04/2020
 
 import csv
