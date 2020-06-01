@@ -9,7 +9,8 @@ from tabulate import tabulate
 import csv
 import webbrowser
 
-def numerocursos(dic, carne, archivo):
+
+def numerocursos(carne, archivo):
     """ Esta función le permite al usuario ingresar la cantidad de cursos que lleva
     por día, se realiza un ciclo que pide los cursos que lleva cada día de la semana.
     Tambien añade dichos datos a un csv."""
@@ -18,7 +19,6 @@ def numerocursos(dic, carne, archivo):
         print("--------------------------------------------\n'Cursos del día: ", i)
         num = input('Ingrese la cantidad de cursos que tiene este día: ')
         num = PF.comprobar(num)
-        lista = dic.get(i)
         if num == 0:
             pass
         else:
@@ -28,16 +28,13 @@ def numerocursos(dic, carne, archivo):
                 horai = PF.verifHora(horai)
                 horaf = input('Ingrese la hora de en que termina la clase (hh:mm): ')
                 horaf = PF.verifHora2(horaf, horai)
-                curso_n = [curso, horai, horaf]
-                lista.append(curso_n)
-                dic[i] = lista
                 print('')
 
                 datos_cursos = [carne, i, "Curso", curso, horai, horaf]
                 agregar(archivo, datos_cursos)
-    return dic
+
         
-def actividades(dic, carne, archivo):
+def actividades(carne, archivo):
     """ Esta función le permite al usuario ingresar la cantidad de actividades que realiza
     cada día, se hace un ciclo para que el usuario pueda ingresar las diversas actividades por día"""
     Dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
@@ -45,7 +42,6 @@ def actividades(dic, carne, archivo):
         print("--------------------------------------------\n'Actividades del día: ", i)
         num = input('Ingrese la cantidad de actividades extracurriculares que tiene: ')
         num = PF.comprobar(num)
-        lista = dic.get(i)
         if num == 0:
             pass
         else:
@@ -55,27 +51,22 @@ def actividades(dic, carne, archivo):
                 horai = PF.verifHora(horai)
                 horaf = input('Ingrese la hora de en que termina actividad (hh:mm): ')
                 horaf = PF.verifHora2(horaf, horai)
-                actividad_n = [actividad, horai, horaf]
-                lista.append(actividad_n)
-                dic[i] = lista
                 print('')
 
                 datos_actividades = [carne, i, "Actividad", actividad, horai, horaf]
                 agregar(archivo, datos_actividades)
-    return dic
 
-def tareas(cant, dic, carne, archivo):
-    """Esta función permite ingresar los datos de las tareas para guardarlas en un diccionario"""
+
+def tareas(cant, carne, archivo):
+    """Esta función permite ingresar los datos de las tareas para guardarlas en un archivo"""
     for i in range(cant):
         tar=input("Ingrese el nombre de la tarea por realizar:" )
         fecha=input("Ingrese la fecha de entrega de su tarea: ")
         proc = input("Ingrese el estado de la tarea: ")
-        lista = [fecha, proc]
-        dic[tar] = lista
 
         datos_tareas = [carne, tar, fecha, proc]
         agregar(archivo, datos_tareas)
-    return dic
+
 
 def tablas(tareas):
     """Esta función permite imprimir los datos de un diccionario de forma tabulada"""
@@ -139,29 +130,32 @@ def Bienestar_Estudiantil(menu_BE, opciones_BE):
                 print("Comunicate con las autoridades de tu institución para casos especificos. ")
             
         if opcion == 3:
-            print("\n********OPCIÓN 5 SELECCIONADA*******")
+            print("\n********OPCIÓN 3 SELECCIONADA*******")
             print("Regresando al menú principal...")
             var = True
         
 
-
-def imprimirdiccionario(dic):
+def imprimirdiccionario(lista):
     """Esta función imprime el horario de las actividades que el usuario
     tiene que realizar durante cada día de la semana"""
     Dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
     for i in Dias:
         print(i,':')
-        valor = dic.get(i)
-        if len(valor) == 0:
-            print('No Tiene Nada Por Hacer Este Dia')
-        else:
-            for n in valor:
-                print(n[0], n[1],'-',n[2])
+        for x in lista:
+            lista_i = []
+            if i in x:
+                lista_i.append(x)
+            if len(lista_i) == 0:
+                pass
+            else:
+                for n in lista_i:
+                    print(n[3], n[4],'-',n[5])
+        
 
 
 def comprobar_archivo(nombre, datos):
     """ La función comprueba si un archivo esta en la carpeta asignada para este, si no está lo crea
-    con el nombre de catalogo y le coloca el encabezado"""
+    con el nombre de la variable y le coloca el encabezado"""
     try:
         with open(nombre, 'r') as archivo:
             pass

@@ -1,4 +1,4 @@
-#Fase 3: Prototipo funcional
+#Fase 4: Entrega final 
 #Módulo: Funciones de Comprobación
 #Proyecto: Sboard
 #Autores: Alejandro Gómez 20347, Marco Jurado 20308, Oscar López 20679, Ana Paola de León
@@ -24,6 +24,7 @@ def comprobar(numero):
             numero = input('Ingrese la cantidad de nuevo: ')
     return numero
 
+
 def verifHora(hora):
     """Esta función verfica que las horas de inicio que le usuario ingrese sean correctas,
     además revisa que sean reales y que no haya errores al ingresarlas"""
@@ -40,13 +41,14 @@ def verifHora(hora):
                 else:
                     print('Solo se permiten horas reales')
                     hora = input('Ingrese la hora nuevamente: ')
-            except ValueError:
+            except:
                 print('ERROR, Solo se permiten números para indicar la hora')
                 hora = input('Ingrese la hora nuevamente: ')
         else:
             print('Error al ingresar la hora')
             hora = input('Ingrese la hora nuevamente: ')
     return hora
+
 
 def verifHora2(hora, hora1):
     """Esta función verifica que las horas de finalización de una actividad o curso
@@ -77,19 +79,20 @@ def verifHora2(hora, hora1):
             else:
                 print('Solo se permiten horas reales')
                 hora = input('Ingrese la hora de nuevo: ')
-        except ValueError:
+        except:
             print('ERROR, Solo se permiten números para indicar la hora')
             hora = input('Ingrese la hora de nuevo: ')
     return hora
 
-def rango(numero):
+
+def rango(numero, lista):
     """ La función comprueba si un número es un entero o no, además
     en esta se puede comprobar si el número está dentro del rango especificado"""
     var = False
     while var == False:
         try:
             numero = int(numero)
-            if 1 <= numero <= 8:
+            if 1 <= numero <= len(lista):
                 var = True
             else:
                 print('El numero esta fuera de rango')
@@ -98,6 +101,7 @@ def rango(numero):
             print('Error, Solo se permite el ingreso de números enteros')
             numero = input('Ingrese el número de nuevo: ')
     return numero 
+
 
 def rango_BE(numero):
     """ La función comprueba si un número es un entero o no, además
@@ -116,6 +120,7 @@ def rango_BE(numero):
             numero = input('Ingrese el número de nuevo: ')
     return numero 
 
+
 def rango_BE2(numero):
     """ La función comprueba si un número es un entero o no, además
     en esta se puede comprobar si el número está dentro del rango especificado"""
@@ -132,4 +137,21 @@ def rango_BE2(numero):
             print('Error, Solo se permite el ingreso de números enteros')
             numero = input('Ingrese el número de nuevo: ')
     return numero 
-    
+
+
+def rangoedit(numero):
+    """ La función comprueba si un número es un entero o no, además
+    en esta se puede comprobar si el número está dentro del rango especificado"""
+    var = False
+    while var == False:
+        try:
+            numero = int(numero)
+            if 1 <= numero <= 4:
+                var = True
+            else:
+                print('El numero esta fuera de rango')
+                numero = input('Ingrese el número de nuevo: ')
+        except ValueError:
+            print('Error, Solo se permite el ingreso de números enteros')
+            numero = input('Ingrese el número de nuevo: ')
+    return numero 
