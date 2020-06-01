@@ -1,6 +1,6 @@
 #Fase 4: Entrega final 
 #Proyecto: Sboard
-#Autores: Alejandro Gómez 20347, Marco Jurado 20308, Oscar López 20679, Ana Paola de León 20361
+#Autores: Alejandro Gómez 20347, Marco Jurado 20308, Racso1624, Ana Paola de León 20361
 #Fecha 21/04/2020
 
 menu = ['1) Ingresar el horario de sus cursos', '2) Agregar actividades extracurriculares', '3) Ingresar tareas', '4) Visualizar la tareas','5) Visualizar horario', '6) Bienestar Estudiantil', '7) Editar', '8) Estadísticas', '9) Salir']
