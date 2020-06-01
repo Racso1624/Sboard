@@ -1,7 +1,7 @@
 #Fase 4: Entrega final 
 #Módulo: Funciones de Comprobación
 #Proyecto: Sboard
-#Autores: Alejandro Gómez 20347, Marco Jurado 20308, Oscar López 20679, Ana Paola de León
+#Autores: Alejandro Gómez 20347, Marco Jurado 20308, Racso1624, Ana Paola de León
 #Fecha 21/04/2020
 
 def opciones(ops):
